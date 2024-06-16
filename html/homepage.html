@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JKT48</title>
+    <link rel="stylesheet" href="../css/homepage.css">
+</head>
+<body>
+    <header>
+        <h1>JKT48 Official Website</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#members">Members</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#calendar">Calendar</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <div class="banner">
+                <img src="left-banner.jpg" alt="Left Banner" class="banner-img left">
+                <h2>Welcome to JKT48</h2>
+                <p>This is the official website of JKT48.</p>
+                <img src="right-banner.jpg" alt="Right Banner" class="banner-img right">
+            </div>
+            <div class="carousel" id="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="image1.jpg" alt="Image 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="image2.jpg" alt="Image 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="image3.jpg" alt="Image 3">
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="prev">Prev</button>
+                    <button class="next">Next</button>
+                </div>
+                <div class="carousel-indicators">
+                    <span class="carousel-disc active" data-slide-to="0"></span>
+                    <span class="carousel-disc" data-slide-to="1"></span>
+                    <span class="carousel-disc" data-slide-to="2"></span>
+                </div>
+            </div>
+        </section>
+        <section id="calendar">
+            <h2>Interactive Calendar</h2>
+            <div id="calendar-container"></div>
+        </section>
+        <section id="news">
+            <h2>Latest News</h2>
+            <div id="news-articles">
+                <!-- News articles will be dynamically loaded here -->
+            </div>
+        </section>
+        <section id="members">
+            <h2>Members</h2>
+            <div id="members-list">
+                <!-- Member profiles will be dynamically loaded here -->
+            </div>
+        </section>
+        <section id="events">
+            <h2>Upcoming Events</h2>
+            <div id="events-list">
+                <!-- Event details will be dynamically loaded here -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 JKT48. All rights reserved.</p>
+    </footer>
+    <script src="../js/homepage.js"></script>
+</body>
+</html>

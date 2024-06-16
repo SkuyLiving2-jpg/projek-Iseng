@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadwal Waktu</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Jadwal Timetable</h1>
+        
+        <!-- Daftar Kegiatan -->
+        <div class="activity-list">
+            <h2>Daftar Kegiatan</h2>
+            <div id="activityList">
+                <!-- Kegiatan dan tabelnya akan ditambahkan di sini -->
+            </div>
+        </div>
+
+        <div class="form-container">
+            <h2>Tambah Jadwal</h2>
+            <form id="addScheduleForm">
+                <label for="session">Sesi:</label>
+                <input type="number" id="session" required min="1">
+
+                <label for="date">Tanggal:</label>
+                <input type="date" id="date" required>
+
+                <label for="time">Waktu:</label>
+                <input type="time" id="time" required>
+
+                <label for="activity">Kegiatan:</label>
+                <input type="text" id="activity" required>
+
+                <label for="track">Jalur:</label>
+                <input type="text" id="track" required>
+
+                <label for="member">Member:</label>
+                <input type="text" id="member" required>
+
+                <button type="submit">Tambahkan</button>
+            </form>
+        </div>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+/* Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    max-width: 900px;
+    width: 100%;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #ce1717;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+    transition: background-color 0.3s;
+}
+
+th {
+    background-color: #ce1717;
+    color: white;
+}
+
+td {
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+td:hover {
+    background-color: #f1f1f1;
+}
+
+tr:nth-child(even) td {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) td:hover {
+    background-color: #e1e1e1;
+}
+
+/* Form input */
+.form-container {
+    margin-top: 30px;
+    text-align: left;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input, select, button {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+button {
+    grid-column: span 2;
+    background-color: #ce1717;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ccc;
+    color: #ce1717;
+}
+
+.error-message {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.activity-list {
+    color: #000;
+    text-align: left;
+}
+
+.activity-list h2 {
+    display: none;
+}
+
+.activity-list ul {
+    list-style: none;
+    font-size: 26px;
+    color: #000;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    th, td {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    th, td {
+        padding: 5px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    form {
+        grid-template-columns: 1fr;
+    }
+}
