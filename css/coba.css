@@ -1,4 +1,4 @@
-/* styles.css */
+/* coba.css */
 body {
     margin: 0;
     font-family: 'Inter', Arial, sans-serif;
@@ -7,9 +7,15 @@ body {
 .brand-container {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     background-color: #fff;
     padding: 1rem 2rem;
     color: #000;
+}
+
+.brand-left {
+    display: flex;
+    align-items: center;
 }
 
 .brand-icon {
@@ -31,6 +37,23 @@ body {
 
 .brand-title-2 {
     font-size: 1rem;
+}
+
+.brand-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.auth-link {
+    text-decoration: none;
+    color: #c10a0a;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.auth-link:hover {
+    color: #ffd700;
 }
 
 /* Navbar */
@@ -110,7 +133,7 @@ body {
         left: -250px;
         top: 0;
         height: 100%;
-        width: 220px;
+        width: 230px;
         flex-direction: column;
         background-color: #c10a0a;
         padding-left: 0;
@@ -203,6 +226,26 @@ body {
         border-radius: 5px;
         margin-top: 10px;
     }
+
+    /* Menampilkan "Login | Register" di sidebar pada mobile */
+    .brand-right {
+        display: block;
+        text-align: center;
+        margin-right: 40px;
+    }
+
+    .brand-right a {
+        display: inline-block;
+        margin: 10px 0;
+        color: #c10a0a;
+        font-size: 1rem;
+        transition: color 0.3s ease;
+        text-decoration: none;
+    }
+
+    .brand-right a:hover {
+        color: #ffd700;
+    }
 }
 
 @media (min-width: 769px) {
@@ -219,5 +262,11 @@ body {
         height: 50px;
         width: 1px;
         background-color: #fff;
+    }
+
+    .brand-right {
+        display: flex;
+        align-items: center;
+        gap: 10px;
     }
 }
