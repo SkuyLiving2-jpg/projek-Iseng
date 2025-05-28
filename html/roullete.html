@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucky Ticket Draw 🎫</title>
+    <link rel="stylesheet" href="/css/roullete.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Undian Tiket Berhadiah 🎉</h1>
+        <p class="tagline">Temukan pemenang dengan cara yang seru!</p>
+
+        <div class="input-section">
+            <label for="totalPeople">Jumlah Total Peserta:</label>
+            <input type="number" id="totalPeople" min="48" max="350" placeholder="Masukkan angka antara 48-350">
+            <button id="startGameBtn">Mulai Undian</button>
+        </div>
+
+        <div id="gameArea" class="game-area hidden">
+            <p id="probabilityDisplay" class="probability"></p>
+            <div class="controls">
+                <button id="drawOneBtn">Undi Satu Nomor ✨</button>
+                <button id="drawAllBtn">Undi Otomatis Semua 🚀</button>
+                <button id="removeNumberBtn">Hapus Nomor Terundi ❌</button>
+            </div>
+
+            <div class="info-sections">
+                <div class="info-card">
+                    <h2>🎫 Tiket Tersisa: <span id="ticketsLeft"></span></h2>
+                </div>
+                <div class="info-card">
+                    <h2>📋 Nomor Pemenang:</h2>
+                    <div id="drawnNumbersList" class="drawn-list">
+                        <p class="no-numbers">Belum ada nomor yang diundi.</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <h2>🔍 Cari Nomor:</h2>
+                    <input type="number" id="searchNumber" placeholder="Cari nomor...">
+                    <button id="searchBtn">Cari</button>
+                    <p id="searchResult"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/roullete.js"></script>
+</body>
+</html>
