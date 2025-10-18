@@ -68,8 +68,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function calculateProbability() {
         if (totalPeople > 0) {
-            const probability = (totalTickets / totalPeople) * 100;
-            probabilityDisplay.textContent = `💡 Peluang Anda mendapatkan tiket adalah: ${probability.toFixed(2)}%`;
+            const probability = (1 / totalPeople) / 48;
+            probabilityDisplay.textContent = `💡 Peluang Anda mendapatkan tiket adalah: ${probability.toFixed(9)}%`;
         } else {
             probabilityDisplay.textContent = ``;
         }
@@ -118,17 +118,41 @@ document.addEventListener('DOMContentLoaded', () => {
         displayMessage(searchResultParagraph, ''); // Clear search result
     });
 
-    drawOneBtn.addEventListener('click', () => {
+    drawOneBtn.addEventListener('click', async () => {
         if (ticketsLeft > 0 && remainingCandidates.length > 0) {
-            lastDrawn = remainingCandidates.shift(); // Ambil nomor pertama dari array yang sudah diacak
+            const rouletteDisplay = document.getElementById('rouletteDisplay');
+            rouletteDisplay.classList.remove('hidden');
+            rouletteDisplay.classList.add('spin');
+
+            // Simulasikan efek berputar cepat
+            let spinCount = 0;
+            const spinInterval = setInterval(() => {
+                const randomNum = remainingCandidates[Math.floor(Math.random() * remainingCandidates.length)];
+                rouletteDisplay.textContent = randomNum;
+                spinCount++;
+            }, 50);
+
+            // Setelah beberapa detik, berhenti dan tampilkan hasil
+            await new Promise(resolve => setTimeout(resolve, 2000 + Math.random() * 1000));
+            clearInterval(spinInterval);
+            rouletteDisplay.classList.remove('spin');
+
+            // Pilih nomor final
+            lastDrawn = remainingCandidates.shift();
             drawnNumbers.push(lastDrawn);
             ticketsLeft--;
+
+            // Tampilkan hasil final
+            rouletteDisplay.textContent = lastDrawn;
             displayMessage(searchResultParagraph, `🎉 Nomor yang mendapatkan tiket: ${lastDrawn}`, 'success');
             updateDisplay();
+
+            // Sembunyikan animasi setelah jeda singkat
         } else {
-            displayMessage(searchResultParagraph, '✅ Semua tiket telah diundi atau tidak ada kandidat tersisa.', 'info');
+        displayMessage(searchResultParagraph, '✅ Semua tiket telah diundi atau tidak ada kandidat tersisa.', 'info');
         }
     });
+
 
     drawAllBtn.addEventListener('click', async () => {
         if (ticketsLeft > 0 && remainingCandidates.length > 0) {

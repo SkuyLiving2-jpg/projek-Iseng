@@ -131,6 +131,40 @@ button:active {
     min-width: 180px; /* Ensure buttons have minimum width */
 }
 
+/* 🎡 ROULETTE DISPLAY AREA */
+.roulette-display {
+    font-size: 3em;
+    font-weight: 700;
+    text-align: center;
+    color: var(--primary-color);
+    background-color: #f9f9f9;
+    border: 3px solid var(--accent-color);
+    border-radius: var(--border-radius);
+    padding: 25px 50px;
+    margin: 20px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: fit-content;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.roulette-display.spin {
+    animation: spinEffect 0.08s infinite;
+    color: var(--secondary-color);
+    box-shadow: 0 0 15px rgba(255, 193, 7, 0.5);
+}
+
+@keyframes spinEffect {
+    0% { transform: scale(1) rotate(0deg); }
+    25% { transform: scale(1.05) rotate(3deg); }
+    50% { transform: scale(0.95) rotate(-3deg); }
+    100% { transform: scale(1) rotate(0deg); }
+}
+
+/* Untuk sembunyikan tampilan sementara */
+.hidden {
+    display: none !important;
+}
+
 #drawOneBtn { background-color: var(--secondary-color); } /* Amber for draw one */
 #drawOneBtn:hover { background-color: #ffb300; }
 
@@ -299,5 +333,30 @@ button:active {
 
     .info-card button.search-button {
         width: 100%; /* Full width for search button */
+    }
+
+    .roulette-display {
+        font-size: 2em;
+        padding: 20px 30px;
+        margin: 15px auto;
+    }
+
+    .info-card {
+        padding: 20px;
+    }
+
+    .drawn-list {
+        max-height: 150px;
+        font-size: 0.9em;
+    }
+
+    button {
+        font-size: 0.95em;
+        padding: 10px 20px;
+    }
+
+    .tagline {
+        font-size: 0.95em;
+        margin-bottom: 20px;
     }
 }
